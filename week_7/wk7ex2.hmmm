@@ -1,0 +1,41 @@
+# Week 7 Opgave 2
+#
+# Naam:
+#
+# Hmmm...
+#
+# bereken r1 tot de macht r2
+00 read r1          # lees getal van gebruiker in r1
+01 read r2          # ook voor r2
+
+
+02 jnezn r2 05		# kijk of r2 0 is anders gaan we naar lijn 5
+03 setn r1 1		# zet r4 naar 1
+04 jumpn 09		# spring naar einde programma
+
+# op dit punt is r2 minimaal 1
+05 copy r3 r2		# kopieer r2 naar r3
+
+# dus gaan we hier voor r2 keren loopen
+06 mul r1 r1 r2	# vermenigvuldig r1 met r2 en assign ze terug aan r1
+07 addn r3 -1		# haal 1 van r3 af
+08 jnezn r3 06		# spring naar lijn 08 als r3 niet 0 is
+
+
+09 write r1		# print het antwoord
+10 halt			# stop programma
+
+# psuedocode
+# r2 = input("Enter number: ")
+# r3 = input("Enter number: ")
+#
+# if r2 == 0:
+#	r4 = 1
+# else:
+#	r3 = r2
+#	r4 = r1
+#	do:
+#		r4 = r4 * r2
+#		r3 -= 1
+#	while r3 > 0
+# print(r4)

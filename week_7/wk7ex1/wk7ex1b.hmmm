@@ -1,0 +1,32 @@
+# wk7ex1b.hmmm wordt een random-number generator
+#
+# Naam: Michel Gerding
+
+# Practicumopgave #2: Breid deze code uit zodat dit je random-number generator wordt:
+#   (Merk op: dit is begincode die de invoer op de juiste manier verwerkt...)
+
+# a = 21
+# c = 3
+# m = 100
+# X_0 = 42
+# N = 100
+
+
+00 read r1          # voer a in
+01 read r2          # voer c in
+02 read r3          # voer m in
+03 read r4          # voer X_0 in
+04 read r5          # voer N in
+
+# als n gelijk aan 0 is stoppen wij door naar rij 12 te springen
+05 jeqzn r5 12
+
+06 mul r6 r1 r4     # vermeenigvuldig a met X_0 en zet het resultaat in r6
+07 add r6 r6 r2     # tel r2 bij r6 op
+08 mod r4 r6 r3     # bereken X_n+1
+09 addn r5 -1       # haal 1 van n af
+10 write r4         # print x_n+1
+11 jumpn 05         # spring naar lijn 05
+
+12 halt             # stop programma
+

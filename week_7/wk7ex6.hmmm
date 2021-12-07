@@ -1,0 +1,45 @@
+# Week 7 Opgave 6
+#
+# Naam: Michel Gerding
+#
+# Hmmm...
+#
+# Dit is een voorbeeld; je moet deze code vervangen...
+#
+
+# functie main
+00 read     r1          # lees invoer van gebruiker
+01 calln    r2 06       # roep functie aan en sla lijn op in 
+02 nop
+03 loadn    r2 31       # laad adress 1 van gehuegen en sla op in register 2
+04 write    r2          # schrijf waarde in r2 uit
+05 halt                 # stop programma
+
+# functie Fibonacci
+# r1 moet zijn het nste nummer voor Fibonacci
+# r2 moet zijn de volgende lijn
+# check of r1 0, 1 of 2 is 
+06 copy     r4 r1
+07 addn     r4 -3       # haal 3 van r1 af
+08 jgtzn    r4 10       # kijk of r4 minder is dan 0 
+09 setn     r4 1
+10 storen   r4 31       # store r3 in geheugen adress 1 
+11 jumpr    r2          # ga terug naar lijn opgeslagen in r2
+
+# bereken Fibonacci voor r1-1
+12 storen   r2 02       # sla huidige volgend address op in gehuegen
+13 addn     r1 -1       # haal 1 van Fibonacci af 
+14 calln    r2 06       # roep functie fibonacci aan
+15 loadn    r5 31       # laad gegeven op plek 1 in geheugen
+
+# bereken fibonacy voor r1-2
+16 addn     r1 -2       # haal 2 van Fibonacci af 
+17 calln    r2 06       # roep functie fibonacci aan
+18 loadn    r6 31       # laad gegeven op plek 1 in geheugen
+
+19 add      r4 r6 r5    # bereken fibonacci
+
+# return waarde
+20 loadn    r4 31 # sla antwoord op in 
+21 loadn    r2 01
+22 jumpr    r2 

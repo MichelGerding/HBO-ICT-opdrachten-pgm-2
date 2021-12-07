@@ -1,0 +1,36 @@
+# Week 7 Opgave 3
+#
+# Naam:
+#
+# Hmmm...
+
+
+00 read r1		# lees getal van gebruiker in r1 dat minimaal 2 is
+
+01 setn r2 1		# r2 = 1
+02 setn r3 1		# r3 = 1
+
+03 write r2		# print r2 
+
+04 add r4 r2 r3		# r4 = r2 + r3
+05 copy r2 r3		# r2 = r3
+06 copy r3 r4		# r3 = r4
+
+07 addn r1 -1		# r1 -= 1
+
+08 jnezn r1 03		# if r1 != 0: jmp naar lijn 3
+09 halt
+
+
+# r1 = input("enter a number")
+# r2, r3 = 1, 1
+# 
+# while r1 != 0
+#	print(r2)
+#	
+#	r4 = r2 + r3
+#	r2 = r3	
+#	r3 = r4
+#	
+#	r1 -= 1
+
