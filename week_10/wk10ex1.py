@@ -178,6 +178,7 @@ class Date:
         return self.diff(d2)
 
     def dow(self):
+        """ get the day of the week """
         # get total amount of days since 0,0,0
         current_day = self.diff(Date(1,1,1))
         return [
@@ -260,25 +261,25 @@ assert (nd4 == Date(1, 1, 2100))
 # tests for date.add_n_days
 # nd = Date(12, 6, 2021);     nd.add_n_days(10)
 # nd2 = Date(31, 12, 2021);   nd2.add_n_days(10)
-# nd3 = Date(31, 1, 2022);    nd3.add_n_days(10)
-# nd4 = Date(1, 1, 2100);     nd4.add_n_days(10)
+nd3 = Date(31, 1, 2022);    nd3.add_n_days(10)
+nd4 = Date(1, 1, 2100);     nd4.add_n_days(10)
 
 
-# assert (nd == Date(22, 6, 2021))
-# assert (nd2 == Date(10, 1, 2022))
-# assert (nd3 == Date(10, 2, 2022))
-# assert (nd4 == Date(11, 1, 2100))
+assert (nd == Date(22, 6, 2021))
+assert (nd2 == Date(10, 1, 2022))
+assert (nd3 == Date(10, 2, 2022))
+assert (nd4 == Date(11, 1, 2100))
 
 # tests for Date.sub_n_days
-# nd = Date(12, 6, 2021);     nd.sub_n_days(10)
-# nd2 = Date(1, 1, 2022);     nd2.sub_n_days(10)
-# nd3 = Date(1, 2, 2022);     nd3.sub_n_days(10)
-# nd4 = Date(2, 1, 2100);     nd4.sub_n_days(10)
+nd = Date(12, 6, 2021);     nd.sub_n_days(10)
+nd2 = Date(1, 1, 2022);     nd2.sub_n_days(10)
+nd3 = Date(1, 2, 2022);     nd3.sub_n_days(10)
+nd4 = Date(2, 1, 2100);     nd4.sub_n_days(10)
 
-# assert (nd == Date(2, 6, 2021))
-# assert (nd2 == Date(22, 12, 2021))
-# assert (nd3 == Date(22, 1, 2022))
-# assert (nd4 == Date(23, 12, 2099))
+assert (nd == Date(2, 6, 2021))
+assert (nd2 == Date(22, 12, 2021))
+assert (nd3 == Date(22, 1, 2022))
+assert (nd4 == Date(23, 12, 2099))
 
 # tests for date.diff and __sub__
 
